@@ -20,7 +20,7 @@ body {
 /*-------------------------------------HEADER E CABEÇALHO-------------------------------------------*/
 
 header {
-  position: fixed;          /* fixa o header no topo da página */
+  position: static;          /* fixa o header no topo da página */
   top: 0;                   /* gruda no topo */
   left: 0;                  /* gruda na esquerda */
   width: 100%;              /* ocupa 100% da largura da tela */
@@ -184,51 +184,43 @@ footer {
 }
 
 /*-------------------------------------RESPONSIVIDADE-------------------------------------------*/
-
-/* Tablets e desktops médios */
-@media (max-width: 992px) {
-  header {
-    padding: 15px 30px; /* reduz padding */
-  }
-
-  nav ul {
-    gap: 1.5rem; /* reduz espaçamento do menu */
-  }
-
-  .welcome-message h1 {
-    font-size: 2.2rem; /* título menor */
-  }
-}
-
-/* Celulares */
+/*telas menores*/
 @media (max-width: 768px) {
   header {
-    flex-direction: column;   /* logo e nav ficam em coluna */
-    align-items: center;      /* centraliza */
-    padding: 15px 20px;       /* reduz padding */
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
   }
 
   nav ul {
-    flex-direction: column;   /* menu em coluna */
-    align-items: center;      /* centralizado */
-    gap: 1rem;                /* menor espaço entre itens */
-    margin-top: 10px;         /* espaço entre logo e nav */
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
   }
 
-  .welcome-message h1 {
-    font-size: 2rem; /* reduz tamanho do título */
+  header .logo img {
+    width: 80px; /* reduz a logo para mobile */
   }
 
-  .welcome-message p {
-    font-size: 1.1rem; /* reduz parágrafo */
-  }
-
-  .info-image-section {
-    flex-direction: column; /* texto e imagem em coluna */
-    text-align: center;     /* centraliza conteúdo */
-  }
-
-  .image-container img {
-    max-width: 100%; /* imagem ocupa toda largura disponível */
+  header .brand-name {
+    font-size: 1.4rem; /* texto menor */
   }
 }
+
+/* telas intermediarias*/
+
+@media (max-width: 992px) and (min-width: 769px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  header .brand-name {
+    font-size: 1.6rem;
+  }
+}
+
